@@ -1,0 +1,29 @@
+{
+  "name": "sszcalc-v0",
+  "version": "0.0.0",
+  "description": "Simple Js Calculator",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syaifulsz/sszcalc-v0.git"
+  },
+  "keywords": [
+    "Simple",
+    "Js",
+    "Calculator"
+  ],
+  "author": "Syaiful Shah Zinan <syaifulshahzinan@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syaifulsz/sszcalc-v0/issues"
+  },
+  "homepage": "https://github.com/syaifulsz/sszcalc-v0#readme",
+  "dependencies": {
+    "alpinejs": "^3.10.3",
+    "bootstrap": "^5.2.0",
+    "jquery": "^3.6.0"
+  }
+}

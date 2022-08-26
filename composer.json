@@ -1,0 +1,17 @@
+{
+    "name": "syaifulsz/sszcalc-v0",
+    "description": "Simple Calculator",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "SSZ\\Calculator\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Syaiful Shah Zinan",
+            "email": "syaifulshahzinan@gmail.com"
+        }
+    ],
+    "require": {}
+}
