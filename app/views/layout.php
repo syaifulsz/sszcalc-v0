@@ -13,7 +13,7 @@ use SSZ\Calculator\Asset;
     <?= Asset::css() ?>
     <?= Asset::js() ?>
 </head>
-<body class="bg-light">
+<body class="bg-dark">
 
 <?= $content ?? '' ?>
 
