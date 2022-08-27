@@ -6,11 +6,18 @@ class CalculatorClass
         this.isDebug = false;
 
         this.actionOperations = [ 'plus', 'minus', 'divide', 'times' ];
+        this.actionOperationSymbols = {
+            plus: '+',
+            minus: '-',
+            divide: '&div;',
+            times: '&times;'
+        };
         this.history = [];
         this.computeBucket = [];
 
         this.buttonSelector = '.js-calculator-button';
         this.screenSelector = '.js-calculator-screen';
+        this.formulaSelector = '.js-calculator-formula';
         this.screen = $( '.js-calculator-screen' );
         this.screenValue = '';
         this.isOperation = false;
@@ -101,7 +108,19 @@ class CalculatorClass
 
     getComputeFormula()
     {
-        let str = '';
+        const computeBucket = this.getComputeBucket();
+
+        let strArray = [];
+        for ( let key in computeBucket ) {
+            let item = computeBucket[ key ];
+            if ( this.actionOperations.includes( item ) ) {
+                strArray.push( this.actionOperationSymbols[ item ] );
+            } else {
+                strArray.push( item );
+            }
+        }
+
+        return strArray.join( ' ' );
     }
 
     getComputeBucket()
@@ -175,6 +194,7 @@ class CalculatorClass
 
     updateScreen()
     {
+        $( this.formulaSelector ).html( this.getComputeFormula() );
         this.screen.html( this.screenValue );
     }
 }
