@@ -48,6 +48,23 @@ class View
         $this->index = "{$this->viewsDir}/index.php";
     }
 
+    /**
+     * @param $view
+     * @param array $parameter
+     * @return string
+     */
+    public static function partial( $view, array $parameter = [] ): string
+    {
+        // render layout
+        extract( $parameter, EXTR_SKIP );
+        ob_start();
+        require( self::getInstance()->viewsDir . "/{$view}.php" );
+        $partial = ob_get_contents();
+        ob_clean();
+
+        return $partial;
+    }
+
     public function render()
     {
         // render content
