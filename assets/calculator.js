@@ -13,7 +13,6 @@ class CalculatorClass
             times: '&times;'
         };
         this.history = [];
-        this.computeBucket = [];
 
         this.buttonSelector = '.js-calculator-button';
         this.screenSelector = '.js-calculator-screen';
@@ -55,8 +54,14 @@ class CalculatorClass
                 return;
             }
 
-            if ( action === 'equal' ) {
-                self.compute();
+            console.log( action )
+
+            if ( action === 'equal' || action === 'ac' ) {
+                if ( action === 'equal' ) {
+                    self.compute();
+                } else {
+                    self.clear();
+                }
             } else {
                 self.historyAdd( action, number );
             }
@@ -92,6 +97,8 @@ class CalculatorClass
 
     clear()
     {
+        this.history = [];
+        this.screenValue = 0;
     }
 
     delete()
@@ -119,8 +126,7 @@ class CalculatorClass
                 strArray.push( item );
             }
         }
-
-        return strArray.join( ' ' );
+        return strArray.length ? strArray.join( ' ' ) : '0';
     }
 
     getComputeBucket()
